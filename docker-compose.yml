@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  # Backend service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: datapulse-backend
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+    networks:
+      - datapulse-network
+
+  # Frontend service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: datapulse-frontend
+    restart: unless-stopped
+    ports:
+      - '5173:5173'
+    networks:
+      - datapulse-network
+
+  # Admin Dashboard service
+  frontend-admin-dashboard:
+    build:
+      context: ./frontend-admin-dashboard
+      dockerfile: Dockerfile
+    container_name: datapulse-admin-dashboard
+    restart: unless-stopped
+    ports:
+      - '5174:5173'
+    networks:
+      - datapulse-network
+
+  # Operations Dashboard service
+  frontend-operations-dashboard:
+    build:
+      context: ./frontend-operations-dashboard
+      dockerfile: Dockerfile
+    container_name: datapulse-operations-dashboard
+    restart: unless-stopped
+    ports:
+      - '5175:5173'
+    networks:
+      - datapulse-network
+
+  # Analytics Dashboard service
+  frontend-analytics-dashboard:
+    build:
+      context: ./frontend-analytics-dashboard
+      dockerfile: Dockerfile
+    container_name: datapulse-analytics-dashboard
+    restart: unless-stopped
+    ports:
+      - '5176:5173'
+    networks:
+      - datapulse-network
+
+networks:
+  datapulse-network:
+    driver: bridge

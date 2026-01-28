@@ -4,20 +4,43 @@
 
 DataPulse is a unified multi-dashboard platform that combines business intelligence, operations monitoring, and analytics in a single interface. The platform enables real-time data synchronization across dashboards with AI-powered anomaly detection and smart alerting capabilities.
 
-### Goals
+## Goals
 
 1. Provide a unified platform for business intelligence, operations monitoring, and analytics
 2. Enable real-time data visualization with customizable dashboard widgets
 3. Support cross-department data sharing with granular permission controls
 4. Deliver AI-powered anomaly detection and smart alerting system
 
+## User Types
+
+| User Type | Permissions | Description |
+|-----------|-------------|-------------|
+| **Business User** | View dashboards, create custom reports, export data, set personal alerts, bookmark favorites, comment on dashboard items | Primary consumers of data insights and reports |
+| **Data Analyst** | All Business User permissions + SQL query access, create/edit data models, build custom visualizations, set up data pipelines, create shareable templates | Power users who build dashboards and data models |
+| **Operations Manager** | View operations dashboard, manage team members, approve workflows, handle escalations, monitor SLAs, view team activity logs | Oversees team operations and workflow management |
+| **System Admin** | Full system access including user management, integration settings, audit logs, system configuration, backup/restore, white-label branding | Complete platform administration and configuration |
+
+## Terminology
+
+| Term | Definition |
+|------|------------|
+| **Widget** | A single visualization component on a dashboard (chart, metric, table) |
+| **Data Model** | A structured representation of data relationships and calculations |
+| **KPI** | Key Performance Indicator - a measurable value showing goal progress |
+| **Pipeline** | Automated data transformation and processing workflow |
+| **Threshold** | A defined value that triggers an alert when crossed |
+| **Connector** | Integration component that links external data sources |
+| **SLA** | Service Level Agreement - performance commitment metrics |
+| **Drill-down** | Action to view more detailed data within a visualization |
+| **Time Series** | Data points indexed in chronological order |
+| **Aggregation** | Combining multiple data points into summary statistics |
+
 ## Tech Stack
 
-- **Backend**: NestJS with TypeORM, JWT, Swagger
-- **Frontend**: React 19 with TailwindCSS 4, shadcn/ui
-- **Dashboards**: Admin Dashboard, Operations Dashboard, Analytics Dashboard (React)
+- **Backend**: NestJS
+- **Frontend**: React (Web Application, Admin Dashboard, Operations Dashboard, Analytics Dashboard)
 - **Database**: PostgreSQL
-- **Deployment**: Docker Compose
+- **Deployment**: Docker
 
 ## Architecture
 
@@ -30,7 +53,6 @@ DataPulse/
 ├── frontend-admin-dashboard/      # Admin dashboard (if applicable)
 ├── frontend-operations-dashboard/ # Operations dashboard (if applicable)
 ├── frontend-analytics-dashboard/  # Analytics dashboard (if applicable)
-├── mobile/                        # React Native mobile app (if applicable)
 └── docker-compose.yml             # Container orchestration
 ```
 
@@ -265,30 +287,6 @@ import { Button } from '../../../components/ui/button';
 ### Mobile Architecture (React Native)
 
 
-## User Types & Permissions
-
-| Role | Permissions |
-|------|-------------|
-| **Business User** | View dashboards, create custom reports, export data, set personal alerts, bookmark favorites, comment on dashboard items |
-| **Data Analyst** | All Business User permissions + SQL query access, create/edit data models, build custom visualizations, set up data pipelines, create shareable templates |
-| **Operations Manager** | View operations dashboard, manage team members, approve workflows, handle escalations, monitor SLAs, view team activity logs |
-| **System Admin** | Full system access including user management, integration settings, audit logs, system configuration, backup/restore, white-label branding |
-
-## Terminology
-
-| Term | Definition |
-|------|------------|
-| **Widget** | A single visualization component on a dashboard (chart, metric, table) |
-| **Data Model** | A structured representation of data relationships and calculations |
-| **KPI** | Key Performance Indicator - a measurable value showing goal progress |
-| **Pipeline** | Automated data transformation and processing workflow |
-| **Threshold** | A defined value that triggers an alert when crossed |
-| **Connector** | Integration component that links external data sources |
-| **SLA** | Service Level Agreement - performance commitment metrics |
-| **Drill-down** | Action to view more detailed data within a visualization |
-| **Time Series** | Data points indexed in chronological order |
-| **Aggregation** | Combining multiple data points into summary statistics |
-
 ## Key Decisions
 
 | Decision | Rationale | Date |
@@ -309,30 +307,17 @@ docker-compose up -d
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `DATABASE_URL` | PostgreSQL connection string | Yes |
+| `DATABASE_URL` | Database connection string | Yes |
 | `JWT_SECRET` | JWT signing secret | Yes |
-| `GOOGLE_CLIENT_ID` | Google OAuth client ID | Yes |
-| `GOOGLE_CLIENT_SECRET` | Google OAuth client secret | Yes |
-| `OKTA_DOMAIN` | Okta domain for SSO | Yes |
-| `OKTA_CLIENT_ID` | Okta client ID | Yes |
-| `AWS_ACCESS_KEY_ID` | AWS S3 access key | Yes |
-| `AWS_SECRET_ACCESS_KEY` | AWS S3 secret key | Yes |
-| `AWS_S3_BUCKET` | S3 bucket name for file storage | Yes |
-| `SENDGRID_API_KEY` | SendGrid API key for emails | Yes |
-| `SLACK_WEBHOOK_URL` | Slack webhook for notifications | Yes |
-| `TWILIO_ACCOUNT_SID` | Twilio account SID for SMS | Yes |
-| `TWILIO_AUTH_TOKEN` | Twilio auth token | Yes |
-| `STRIPE_SECRET_KEY` | Stripe secret key for billing | Yes |
-| `STRIPE_PUBLISHABLE_KEY` | Stripe publishable key | Yes |
 
 ## External Services
 
 | Service | Purpose | Documentation |
 |---------|---------|---------------|
-| **Google OAuth** | SSO authentication | [Google OAuth Docs](https://developers.google.com/identity/protocols/oauth2) |
-| **Okta** | Enterprise SSO integration | [Okta Developer](https://developer.okta.com/) |
-| **AWS S3** | File storage for exports and backups | [AWS S3 Docs](https://docs.aws.amazon.com/s3/) |
-| **SendGrid** | Email notifications and scheduled reports | [SendGrid API](https://docs.sendgrid.com/) |
-| **Slack** | Alert notifications and report delivery | [Slack API](https://api.slack.com/) |
-| **Twilio** | SMS alerts for critical notifications | [Twilio Docs](https://www.twilio.com/docs) |
-| **Stripe** | Subscription billing management | [Stripe API](https://stripe.com/docs/api) |
+| Google OAuth | SSO authentication | https://developers.google.com/identity |
+| Okta | Enterprise SSO integration | https://developer.okta.com |
+| AWS S3 | File storage for exports and backups | https://aws.amazon.com/s3 |
+| SendGrid | Email notifications and scheduled reports | https://sendgrid.com/docs |
+| Slack | Alert notifications and report delivery | https://api.slack.com |
+| Twilio | SMS alerts for critical notifications | https://www.twilio.com/docs |
+| Stripe | Subscription billing management | https://stripe.com/docs |

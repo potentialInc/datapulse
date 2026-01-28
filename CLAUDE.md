@@ -1,15 +1,15 @@
 # DataPulse - Claude Context
 
 ## Stack
-NestJS + React + PostgreSQL | Docker
+nestjs + react + PostgreSQL | Docker
 
 ## Architecture
 ```
-backend/                    # NestJS API (port 3000)
-frontend/                   # React Web (port 5173)
-frontend-admin-dashboard/   # Admin (port 5174)
-frontend-operations-dashboard/ # Operations (port 5175)
-frontend-analytics-dashboard/ # Analytics (port 5176)
+backend/                           # NestJS API (port 3000)
+frontend/                          # React Web (port 5173)
+frontend-admin-dashboard/          # Admin Dashboard (port 5174)
+frontend-operations-dashboard/     # Operations Dashboard (port 5175)
+frontend-analytics-dashboard/      # Analytics Dashboard (port 5176)
 ```
 
 ---
@@ -84,31 +84,3 @@ jq '.dependencies | keys[]' package.json
 |-----------|------|-------|
 | NestJS | .claude/nestjs/guides/ | 20+ guides |
 | React | .claude/react/guides/ | 22 guides |
-
----
-
-## Project Overview
-
-**DataPulse** is a unified multi-dashboard platform combining business intelligence, operations monitoring, and analytics with AI-powered anomaly detection and smart alerting.
-
-### User Types
-- **Business User**: View dashboards, create reports, set alerts
-- **Data Analyst**: SQL access, build dashboards, create data models
-- **Operations Manager**: Team management, workflow approvals, SLA monitoring
-- **System Admin**: Full system access, user management, integrations
-
-### Key Features
-- Real-time dashboard widgets
-- Custom alert configuration
-- SQL query editor
-- Data source integrations (PostgreSQL)
-- Scheduled reports
-- Role-based permissions
-
-### External Services
-- Google OAuth, Okta (SSO)
-- AWS S3 (file storage)
-- SendGrid (email)
-- Slack (notifications)
-- Twilio (SMS alerts)
-- Stripe (billing)

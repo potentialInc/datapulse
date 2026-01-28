@@ -19,16 +19,13 @@ docker-compose up -d
 - **API Reference**: [.claude-project/docs/PROJECT_API.md](.claude-project/docs/PROJECT_API.md)
 - **Database Schema**: [.claude-project/docs/PROJECT_DATABASE.md](.claude-project/docs/PROJECT_DATABASE.md)
 - **API Integration**: [.claude-project/docs/PROJECT_API_INTEGRATION.md](.claude-project/docs/PROJECT_API_INTEGRATION.md)
-- **PRD**: [.claude-project/prd/prd.pdf](.claude-project/prd/prd.pdf)
-- **HTML Prototypes**: [.claude-project/resources/HTML/](.claude-project/resources/HTML/)
 
 ## Tech Stack
 
-- **Backend**: NestJS with TypeORM, JWT, Swagger
-- **Frontend**: React 19 with TailwindCSS 4, shadcn/ui
-- **Dashboards**: Admin, Operations, Analytics (React)
+- **Backend**: nestjs
+- **Frontend**: react
 - **Database**: PostgreSQL
-- **Deployment**: Docker Compose
+- **Deployment**: Docker
 
 ## Project Structure
 
@@ -37,16 +34,17 @@ DataPulse/
 ├── .claude/                       # Claude Code configuration (submodule)
 ├── .claude-project/               # Project documentation & resources
 │   ├── docs/                      # Technical documentation
-│   ├── prd/                       # Product requirements (prd.pdf)
-│   ├── resources/                 # HTML prototypes (45 files)
-│   ├── memory/                    # Project decisions & context
-│   └── status/                    # Implementation tracking
-├── backend/                       # NestJS API server (pending)
-├── frontend/                      # React web application (pending)
-├── frontend-admin-dashboard/      # Admin dashboard (pending)
-├── frontend-operations-dashboard/ # Operations dashboard (pending)
-├── frontend-analytics-dashboard/  # Analytics dashboard (pending)
-├── docker-compose.yml             # Container orchestration (pending)
+│   ├── prd/                       # Product requirements
+│   ├── resources/                 # HTML screens & assets
+│   └── memory/                    # Project decisions & context
+├── backend/                       # nestjs API server
+├── frontend/                      # React web application (if applicable)
+├── frontend-admin-dashboard/      # Admin dashboard (if applicable)
+├── frontend-operations-dashboard/ # Operations dashboard (if applicable)
+├── frontend-analytics-dashboard/  # Analytics dashboard (if applicable)
+├── frontend-coach-dashboard/      # Coach dashboard (if applicable)
+├── mobile/                        # React Native mobile app (if applicable)
+├── docker-compose.yml             # Container orchestration
 ├── .gitignore                     # Git ignore rules
 ├── CLAUDE.md                      # Consolidated context for Claude
 └── README.md                      # This file
@@ -62,11 +60,7 @@ DataPulse/
 
 ### Initial Setup
 
-**Note**: Backend and frontend boilerplate code is not yet set up. This is a documentation-only setup. Use `/new-project` command without `--docs-only` flag to set up boilerplate code.
-
 ```bash
-# Once boilerplate is set up:
-
 # Install dependencies
 cd backend && npm install
 cd ../frontend && npm install
