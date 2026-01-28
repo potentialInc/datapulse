@@ -308,7 +308,8 @@ docker-compose up -d
 | Variable | Description | Required |
 |----------|-------------|----------|
 | `DATABASE_URL` | Database connection string | Yes |
-| `JWT_SECRET` | JWT signing secret | Yes |
+| `SESSION_SECRET` | Session signing secret for httpOnly cookies | Yes |
+| `COOKIE_DOMAIN` | Domain for cookie (e.g., .datapulse.com) | Yes |
 
 ## External Services
 

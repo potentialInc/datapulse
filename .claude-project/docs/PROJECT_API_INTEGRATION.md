@@ -115,8 +115,8 @@ Recommended service layer organization:
 
 ### Core Setup
 - [ ] Set up Axios instance with base URL in `httpService.ts`
-- [ ] Configure JWT auth interceptors (request/response)
-- [ ] Implement request interceptor for token injection
+- [ ] Configure cookie-based auth interceptors (request/response)
+- [ ] Implement request interceptor for credentials inclusion (withCredentials: true)
 - [ ] Implement response interceptor for 401/403 handling
 - [ ] Configure error handling middleware
 - [ ] Add loading state management
@@ -144,7 +144,8 @@ Recommended service layer organization:
 
 ## Notes
 
-- All endpoints require JWT authentication except public auth endpoints
+- All endpoints require httpOnly cookie authentication except public auth endpoints
+- Authentication cookies are automatically sent by the browser with `withCredentials: true`
 - Role-based access control is enforced at the API level
 - File uploads (exports, branding) use multipart/form-data
 - Large exports are streamed using proper content-disposition headers
