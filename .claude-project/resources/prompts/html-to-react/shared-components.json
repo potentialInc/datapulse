@@ -1,0 +1,160 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-01-29T00:00:00Z",
+  "components": [
+    {
+      "name": "Sidebar",
+      "path": "app/components/layout/Sidebar.tsx",
+      "usage_count": 35,
+      "used_in": ["business-user/*", "admin/*", "data-analyst/*", "ops-manager/*", "settings/*"],
+      "html_pattern": "<aside class=\"w-[240px] flex-shrink-0 border-r border-slate-800 bg-slate-900 flex flex-col h-full z-20\">",
+      "variants": ["Business", "Admin", "Analyst", "OpsManager"],
+      "props": {
+        "variant": "'business' | 'admin' | 'analyst' | 'ops'",
+        "currentPath": "string",
+        "user": "User"
+      }
+    },
+    {
+      "name": "PageHeader",
+      "path": "app/components/layout/PageHeader.tsx",
+      "usage_count": 30,
+      "used_in": ["All main pages"],
+      "html_pattern": "<header class=\"flex items-center justify-between px-8 py-6 z-10\">",
+      "props": {
+        "title": "string",
+        "subtitle": "string?",
+        "actions": "React.ReactNode?"
+      }
+    },
+    {
+      "name": "StatCard",
+      "path": "app/components/ui/StatCard.tsx",
+      "usage_count": 24,
+      "used_in": ["business-home", "admin-dashboard", "ops-dashboard", "analyst-home"],
+      "html_pattern": "<div class=\"bg-slate-800 border border-slate-700/50 rounded-xl p-5 hover:border-indigo-500/30\">",
+      "props": {
+        "icon": "string",
+        "iconColor": "'indigo' | 'emerald' | 'amber' | 'rose'",
+        "label": "string",
+        "value": "string | number",
+        "trend": "{ value: number; positive: boolean }?",
+        "onClick": "() => void?"
+      }
+    },
+    {
+      "name": "NavLink",
+      "path": "app/components/ui/NavLink.tsx",
+      "usage_count": 40,
+      "used_in": ["All sidebar navigations"],
+      "html_pattern": "<a href=\"./page.html\" class=\"group flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg\">",
+      "props": {
+        "to": "string",
+        "icon": "string",
+        "label": "string",
+        "badge": "string | number?"
+      }
+    },
+    {
+      "name": "UserAvatar",
+      "path": "app/components/ui/UserAvatar.tsx",
+      "usage_count": 20,
+      "used_in": ["Sidebars", "tables", "profile cards"],
+      "html_pattern": "<div class=\"w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center\">",
+      "props": {
+        "name": "string",
+        "size": "'sm' | 'md' | 'lg'",
+        "colorScheme": "'indigo' | 'purple' | 'amber' | 'emerald' | 'rose'?"
+      }
+    },
+    {
+      "name": "StatusBadge",
+      "path": "app/components/ui/StatusBadge.tsx",
+      "usage_count": 25,
+      "used_in": ["Tables", "cards", "lists"],
+      "html_pattern": "<span class=\"text-xs font-medium text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full\">",
+      "props": {
+        "status": "'active' | 'pending' | 'critical' | 'inactive' | 'success' | 'warning' | 'error'",
+        "label": "string?"
+      }
+    },
+    {
+      "name": "DataTable",
+      "path": "app/components/ui/DataTable.tsx",
+      "usage_count": 8,
+      "used_in": ["user-management", "audit-log", "billing", "alerts-list", "data-sources"],
+      "html_pattern": "<table class=\"w-full\"><thead class=\"bg-slate-800/50 sticky top-0\">",
+      "props": {
+        "columns": "ColumnDef[]",
+        "data": "T[]",
+        "onRowClick": "(row: T) => void?",
+        "pagination": "boolean?"
+      }
+    },
+    {
+      "name": "ActivityItem",
+      "path": "app/components/ui/ActivityItem.tsx",
+      "usage_count": 8,
+      "used_in": ["business-home", "admin-dashboard", "ops-dashboard"],
+      "html_pattern": "<div class=\"flex items-start gap-4 p-3 rounded-lg hover:bg-slate-700/30\">",
+      "props": {
+        "icon": "string",
+        "iconColor": "'amber' | 'indigo' | 'emerald' | 'rose'",
+        "title": "string",
+        "description": "string",
+        "timestamp": "string | Date"
+      }
+    },
+    {
+      "name": "Modal",
+      "path": "app/components/ui/Modal.tsx",
+      "usage_count": 2,
+      "used_in": ["modal-create-alert", "modal-schedule-report"],
+      "html_pattern": "<div class=\"fixed inset-0 bg-black/60 backdrop-blur-sm\">",
+      "props": {
+        "isOpen": "boolean",
+        "onClose": "() => void",
+        "title": "string",
+        "children": "React.ReactNode",
+        "footer": "React.ReactNode?"
+      }
+    },
+    {
+      "name": "SearchInput",
+      "path": "app/components/ui/SearchInput.tsx",
+      "usage_count": 10,
+      "used_in": ["Dashboards", "management pages"],
+      "html_pattern": "<div class=\"relative group\"><input type=\"text\" class=\"bg-slate-800/50 border border-slate-700\">",
+      "props": {
+        "value": "string",
+        "onChange": "(value: string) => void",
+        "placeholder": "string?",
+        "shortcut": "string?"
+      }
+    },
+    {
+      "name": "DashboardCard",
+      "path": "app/components/ui/DashboardCard.tsx",
+      "usage_count": 8,
+      "used_in": ["business-home", "dashboard-list"],
+      "html_pattern": "<a href=\"#\" class=\"group block bg-slate-800 border border-slate-700/50 rounded-xl overflow-hidden\">",
+      "props": {
+        "title": "string",
+        "lastViewed": "string | Date",
+        "status": "'active' | 'inactive'",
+        "thumbnail": "React.ReactNode?",
+        "onClick": "() => void"
+      }
+    },
+    {
+      "name": "Breadcrumb",
+      "path": "app/components/ui/Breadcrumb.tsx",
+      "usage_count": 5,
+      "used_in": ["user-details", "data-source-details", "other detail pages"],
+      "html_pattern": "<div class=\"flex items-center gap-2 text-sm text-slate-400 mb-2\">",
+      "props": {
+        "items": "{ label: string; href?: string }[]"
+      }
+    }
+  ]
+}
