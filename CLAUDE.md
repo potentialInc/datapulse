@@ -50,6 +50,7 @@ jq '.dependencies | keys[]' package.json
 | **Dev** | /new-project | Create new project with boilerplate |
 | | /fix-ticket | Analyze and fix Notion ticket |
 | | /fullstack | Run autonomous dev loops |
+| | /html-to-react | Convert HTML prototypes to React components |
 | **Design** | /prd-to-design-prompts | Convert PRD to Aura prompts |
 | | /prompts-to-aura | Execute prompts on Aura.build |
 
